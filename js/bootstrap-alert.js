@@ -17,9 +17,14 @@
  * limitations under the License.
  * ========================================================== */
 
-
-!function( $ ){
-
+(function(factory) {
+	if( typeof define === 'function' && define.amd ) {
+		define(['jquery'], factory);
+	}
+	else {
+		factory( this.jQuery );
+	}
+}(function($) {
   "use strict"
 
  /* ALERT CLASS DEFINITION
@@ -90,5 +95,4 @@
   $(function () {
     $('body').on('click.alert.data-api', dismiss, Alert.prototype.close)
   })
-
-}( window.jQuery );
+}));

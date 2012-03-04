@@ -18,8 +18,14 @@
  * ============================================================ */
 
 
-!function( $ ){
-
+(function(factory) {
+	if( typeof define === 'function' && define.amd ) {
+		define(['jquery'], factory);
+	}
+	else {
+		factory( this.jQuery );
+	}
+}(function($) {
   "use strict"
 
  /* DROPDOWN CLASS DEFINITION
@@ -88,5 +94,4 @@
     $('html').on('click.dropdown.data-api', clearMenus)
     $('body').on('click.dropdown.data-api', toggle, Dropdown.prototype.toggle)
   })
-
-}( window.jQuery );
+}));

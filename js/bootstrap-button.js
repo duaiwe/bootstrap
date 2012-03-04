@@ -17,8 +17,14 @@
  * limitations under the License.
  * ============================================================ */
 
-!function( $ ){
-
+(function(factory) {
+	if( typeof define === 'function' && define.amd ) {
+		define(['jquery'], factory);
+	}
+	else {
+		factory( this.jQuery );
+	}
+}(function($) {
   "use strict"
 
  /* BUTTON PUBLIC CLASS DEFINITION
@@ -96,5 +102,4 @@
       $btn.button('toggle')
     })
   })
-
-}( window.jQuery );
+}));

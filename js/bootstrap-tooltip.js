@@ -18,8 +18,14 @@
  * limitations under the License.
  * ========================================================== */
 
-!function( $ ) {
-
+(function(factory) {
+	if( typeof define === 'function' && define.amd ) {
+		define(['jquery'], factory);
+	}
+	else {
+		factory( this.jQuery );
+	}
+}(function($) {
   "use strict"
 
  /* TOOLTIP PUBLIC CLASS DEFINITION
@@ -266,5 +272,4 @@
   , title: ''
   , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
   }
-
-}( window.jQuery );
+}));

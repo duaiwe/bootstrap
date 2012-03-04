@@ -18,8 +18,14 @@
  * ========================================================= */
 
 
-!function( $ ){
-
+(function(factory) {
+	if( typeof define === 'function' && define.amd ) {
+		define(['jquery'], factory);
+	}
+	else {
+		factory( this.jQuery );
+	}
+}(function($) {
   "use strict"
 
  /* MODAL CLASS DEFINITION
@@ -206,5 +212,4 @@
       $target.modal(option)
     })
   })
-
-}( window.jQuery );
+}));

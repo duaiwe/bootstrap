@@ -18,8 +18,14 @@
  * =========================================================== */
 
 
-!function( $ ) {
-
+(function(factory) {
+	if( typeof define === 'function' && define.amd ) {
+		define(['jquery'], factory);
+	}
+	else {
+		factory( this.jQuery );
+	}
+}(function($) {
  "use strict"
 
   var Popover = function ( element, options ) {
@@ -91,5 +97,4 @@
   , content: ''
   , template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
   })
-
-}( window.jQuery );
+}));
